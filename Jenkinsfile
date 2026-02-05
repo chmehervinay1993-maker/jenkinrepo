@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                 withCredentials([sshUserPrivateKey(
-                    credentialsId: 'vm2-deploy-key', 
+                    credentialsId: 'ssh-id', 
                     keyFileVariable: 'SSH_KEY'
                 )]) {
                     echo 'Deploying to multiple web servers using Ansible...'
